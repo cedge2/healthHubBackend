@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+      "firstName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+      },
+      "lastName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+      },
+      "email": {
+          "type": "string",
+          "minLength": 6,
+          "maxLength": 60,
+          "format": "email"
+      },
+      "isAdmin": {
+          "type": "boolean"
+      },
+      "date_created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The ISO 8601 date format of the time when this object was created"
+      },
+      "gender": {
+          "type": "string",
+          "enum": ["male", "female", "other"],
+          "description": "The gender of the individual"
+      },
+      "age": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "The age of the individual in years"
+      },
+      "phone": {
+          "type": "string",
+          "pattern": "^[0-9]{10}$",
+          "description": "The 10-digit phone number of the individual"
+      },
+      "bloodType": {
+          "type": "string",
+          "enum": ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
+          "description": "The blood type of the individual"
+      }
+  },
+  "additionalProperties": false,
+  "required": [
+      "firstName",
+      "lastName",
+      "password",
+      "email",
+      "date_created",
+      "age",
+      "phone",
+      "gender",
+      "bloodType"
+  ]
+}
